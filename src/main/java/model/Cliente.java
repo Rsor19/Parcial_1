@@ -4,13 +4,14 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cliente extends Persona{
+public class Cliente extends Persona {
     private String edad;
     private LocalDate fechaRegistro;
     private List<Inscripcion> listaInscripciones;
 
     /**
      * Metodo constructor de la clase Cliente
+     *
      * @param id
      * @param nombre
      * @param telefono
@@ -56,6 +57,7 @@ public class Cliente extends Persona{
 
     /**
      * Metodo ToString de la clase Cliente
+     *
      * @return
      */
     @Override
@@ -69,11 +71,16 @@ public class Cliente extends Persona{
 
     /**
      * Sobreescritura del metodo validarIdentidad para la clase Cliente
+     *
      * @return
      */
     @Override
-    public String validarIdentidad() {
-        return "";
+    public String validarIdentidad(Persona cliente) {
+        for (Persona c : listaClientes) {
+            if (c.getId().equals(cliente.getId())) {
+                return "Cliente registrado";
+            }
+        }
+        return "Cliente no esta registrado";
     }
-
 }

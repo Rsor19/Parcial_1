@@ -6,6 +6,7 @@ public class Entrenador extends Persona {
 
     /**
      * Metodo constructor de la clase Entrenador
+     *
      * @param id
      * @param nombre
      * @param telefono
@@ -40,6 +41,7 @@ public class Entrenador extends Persona {
 
     /**
      * Metodo toString de la clase Entrenador
+     *
      * @return
      */
     @Override
@@ -52,10 +54,16 @@ public class Entrenador extends Persona {
 
     /**
      * Sobreescritura del metodo validarIdentidad para la clase Entrenador
+     *
      * @return
      */
     @Override
-    public String validarIdentidad() {
-        return "";
+    public String validarIdentidad(Persona entrenador) {
+        for (Persona e : listaEntrenadores) {
+            if (e.getId().equals(entrenador.getId())) {
+                return "Entrenador registrado";
+            }
+        }
+        return "Entrenador no esta registrado";
     }
 }
