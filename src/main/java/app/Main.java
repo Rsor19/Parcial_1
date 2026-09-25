@@ -5,7 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/** Punto único de entrada: úsalo también con el objetivo Maven javafx:run. */
+/**
+ * Aplicacion, ejecución del programa */
 public class Main {
     public static void main(String[] args) {
         Application.launch(SmartGymApplication.class, args);
