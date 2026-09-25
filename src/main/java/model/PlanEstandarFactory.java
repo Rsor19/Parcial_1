@@ -8,7 +8,7 @@ public class PlanEstandarFactory extends PlanFactory{
      * @return
      */
     @Override
-    public Plan crearPlan(String id) {
+    public PlanEntrenamiento crearPlan(String id) {
         return new PlanEstandar(id);
     }
 }

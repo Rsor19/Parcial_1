@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EntrenadoresController">
+  <top><HBox spacing="10"><padding><Insets top="10" right="10" bottom="10" left="10"/></padding><Label text="Entrenadores"/><Button text="Inicio" onAction="#volver"/></HBox></top>
+  <center><TableView fx:id="tabla" onMouseClicked="#cargar"><columns><TableColumn fx:id="idCol" text="Identificación"/><TableColumn fx:id="nombreCol" text="Nombre"/><TableColumn fx:id="especialidadCol" text="Especialidad"/><TableColumn fx:id="telefonoCol" text="Teléfono"/><TableColumn fx:id="correoCol" text="Correo"/><TableColumn fx:id="tarifaCol" text="Tarifa por sesión"/></columns></TableView></center>
+  <bottom><VBox spacing="8"><padding><Insets top="10" right="10" bottom="10" left="10"/></padding><HBox spacing="8"><TextField fx:id="idField" promptText="Identificación"/><TextField fx:id="nombreField" promptText="Nombre"/><ComboBox fx:id="especialidadCombo" promptText="Especialidad"/></HBox><HBox spacing="8"><TextField fx:id="telefonoField" promptText="Teléfono"/><TextField fx:id="correoField" promptText="Correo"/><TextField fx:id="tarifaField" promptText="Tarifa por sesión"/></HBox><HBox spacing="8"><Button text="Guardar / actualizar" onAction="#guardar"/><Button text="Eliminar" onAction="#eliminar"/><Button text="Limpiar" onAction="#limpiar"/></HBox></VBox></bottom>
+</BorderPane>

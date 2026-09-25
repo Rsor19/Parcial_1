@@ -1,9 +1,8 @@
 package model;
 
-public class PlanPremiun extends Plan {
-    /**
-     * Método constructor de PlanPremium
-     * @param id idenrtificador del plan
+public class PlanPremiun extends PlanEntrenamiento {
+    /** Crea un plan premium con su tarifa mensual inicial.
+     * @param id código único del plan
      */
     public PlanPremiun(String id) {
         super(id, 120.0);
@@ -15,6 +14,6 @@ public class PlanPremiun extends Plan {
      */
     @Override
     public double calcularPrecioFinal() {
-        return getPrecioBase() * 0.85; // 15% de descuento
+        return getValorMensual() * getDuracionMeses() * 0.85; // 15% de descuento
     }
 }

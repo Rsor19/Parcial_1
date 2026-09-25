@@ -1,9 +1,8 @@
 package model;
 
-public class PlanEstandar extends Plan {
-    /**
-     * Método constructor de Plan Estandar
-     * @param id inicializa la identificacion del plan
+public class PlanEstandar extends PlanEntrenamiento {
+    /** Crea un plan estándar con su tarifa mensual inicial.
+     * @param id código único del plan
      */
     public PlanEstandar(String id) {
         super(id, 80.0);
@@ -15,6 +14,6 @@ public class PlanEstandar extends Plan {
      */
     @Override
     public double calcularPrecioFinal() {
-        return getPrecioBase() * 0.95;
+        return getValorMensual() * getDuracionMeses() * 0.95;
     }
 }
