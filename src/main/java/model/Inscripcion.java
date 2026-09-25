@@ -11,7 +11,7 @@ public class Inscripcion {
     private List<ServicioAdicional> listaServiciosAdicionales;
     private Cliente cliente;
     private Entrenador entrenadorAsignado;
-    private PlanEntrenamiento plan;
+    private Plan plan;
 
     /**
      * Metodo construtor para la clase Inscripcion
@@ -48,11 +48,11 @@ public class Inscripcion {
         this.cliente = cliente;
     }
 
-    public PlanEntrenamiento getPlan() {
+    public Plan getPlan() {
         return plan;
     }
 
-    public void setPlan(PlanEntrenamiento plan) {
+    public void setPlan(Plan plan) {
         this.plan = plan;
     }
 
