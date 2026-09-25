@@ -7,7 +7,7 @@ public class PlanBasicoFactory extends PlanFactory {
      * Creador concreto para instancias de PlanBasico.
      */
     @Override
-    public Plan crearPlan(String id) {
+    public PlanEntrenamiento crearPlan(String id) {
         return new PlanBasico(id);
     }
 }

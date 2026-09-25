@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ConsultasController" spacing="12">
+  <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+  <HBox spacing="10"><Label text="Consultas e ingresos"/><Button text="Inicio" onAction="#volver"/></HBox>
+  <Separator/>
+  <Label text="Buscar cliente y validar número perfecto"/>
+  <HBox spacing="8"><TextField fx:id="telefonoField" promptText="Teléfono registrado"/><Button text="Buscar" onAction="#buscarCliente"/></HBox>
+  <Label fx:id="resultadoCliente" wrapText="true"/>
+  <Separator/>
+  <Label text="Ingresos por periodo de inscripciones"/>
+  <HBox spacing="8"><DatePicker fx:id="desdePicker"/><DatePicker fx:id="hastaPicker"/><Button text="Calcular ingresos" onAction="#calcularIngresos"/></HBox>
+  <Label fx:id="resultadoIngresos" wrapText="true"/>
+  <Label fx:id="resultadoPagos" wrapText="true"/>
+</VBox>

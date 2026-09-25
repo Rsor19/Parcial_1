@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClientesController">
+  <top><HBox spacing="10"><padding><Insets top="10" right="10" bottom="10" left="10"/></padding><Label text="Clientes"/><Button text="Inicio" onAction="#volver"/></HBox></top>
+  <center><TableView fx:id="tabla" onMouseClicked="#cargar"><columns>
+    <TableColumn fx:id="documentoCol" text="Documento" prefWidth="110"/><TableColumn fx:id="nombreCol" text="Nombre" prefWidth="150"/><TableColumn fx:id="telefonoCol" text="Teléfono" prefWidth="110"/><TableColumn fx:id="correoCol" text="Correo" prefWidth="180"/><TableColumn fx:id="edadCol" text="Edad" prefWidth="60"/><TableColumn fx:id="fechaCol" text="Fecha registro" prefWidth="120"/>
+  </columns></TableView></center>
+  <bottom><VBox spacing="8"><padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+    <HBox spacing="8"><TextField fx:id="documentoField" promptText="Documento"/><TextField fx:id="nombreField" promptText="Nombre completo"/><TextField fx:id="telefonoField" promptText="Teléfono"/></HBox>
+    <HBox spacing="8"><TextField fx:id="correoField" promptText="Correo"/><TextField fx:id="edadField" promptText="Edad"/><DatePicker fx:id="fechaField" promptText="Fecha de registro"/></HBox>
+    <HBox spacing="8"><Button text="Guardar / actualizar" onAction="#guardar"/><Button text="Eliminar" onAction="#eliminar"/><Button text="Limpiar" onAction="#limpiar"/></HBox>
+  </VBox></bottom>
+</BorderPane>

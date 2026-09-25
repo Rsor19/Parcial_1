@@ -6,15 +6,13 @@ public class Entrenador extends Persona {
     private EspecialidadEntrenador especialidad;
     private double tarifaSesion;
 
-    /**
-     * Metodo constructor de la clase Entrenador
-     *
-     * @param id
-     * @param nombre
-     * @param telefono
-     * @param correo
-     * @param especialidad
-     * @param tarifaSesion
+    /** Crea un entrenador con su especialidad y tarifa por sesión.
+     * @param id identificación del entrenador
+     * @param nombre nombre completo
+     * @param telefono teléfono de contacto
+     * @param correo correo electrónico
+     * @param especialidad área en la que trabaja
+     * @param tarifaSesion valor que cobra por sesión
      */
     public Entrenador(String id, String nombre, String telefono, String correo, EspecialidadEntrenador especialidad, double tarifaSesion) {
         super(id, nombre, telefono, correo);
@@ -48,10 +46,7 @@ public class Entrenador extends Persona {
      */
     @Override
     public String toString() {
-        return "Entrenador{" +
-                "especialidad=" + especialidad +
-                ", tarifaSesion=" + tarifaSesion +
-                '}';
+        return getNombre() + " (" + getEspecialidad() + ")";
     }
 
     /**

@@ -11,23 +11,36 @@ public class Inscripcion {
     private List<ServicioAdicional> listaServiciosAdicionales;
     private Cliente cliente;
     private Entrenador entrenadorAsignado;
-    private Plan plan;
+    private PlanEntrenamiento planEntrenamiento;
 
-    /**
-     * Metodo construtor para la clase Inscripcion
-     *
-     * @param codigoInscripcion
-     * @param fechaInscripcion
-     * @param descuentoAplicado
+    /** Crea una inscripción básica con código, fecha y descuento.
+     * @param codigoInscripcion código único de la inscripción
+     * @param fechaInscripcion fecha en que el cliente contrató el plan
+     * @param descuentoAplicado porcentaje de descuento aplicado
      */
     public Inscripcion(String codigoInscripcion, LocalDate fechaInscripcion, double descuentoAplicado) {
         this.codigoInscripcion = codigoInscripcion;
         this.fechaInscripcion = fechaInscripcion;
         this.descuentoAplicado = descuentoAplicado;
-        this.cliente = cliente;
         this.listaServiciosAdicionales = new ArrayList<>();
-        this.entrenadorAsignado = entrenadorAsignado;
-        this.plan = plan;
+    }
+
+    /** Crea una inscripción vinculada con el cliente, el plan, el entrenador y los servicios elegidos.
+     * @param codigoInscripcion código único de la inscripción
+     * @param fechaInscripcion fecha de contratación
+     * @param descuentoAplicado porcentaje de descuento aplicado
+     * @param cliente cliente que contrata el plan
+     * @param planEntrenamiento plan contratado
+     * @param entrenador entrenador asignado, si corresponde
+     * @param servicios servicios adicionales incluidos
+     */
+    public Inscripcion(String codigoInscripcion, LocalDate fechaInscripcion, double descuentoAplicado,
+                       Cliente cliente, PlanEntrenamiento planEntrenamiento, Entrenador entrenador, List<ServicioAdicional> servicios) {
+        this(codigoInscripcion, fechaInscripcion, descuentoAplicado);
+        this.cliente = cliente;
+        this.planEntrenamiento = planEntrenamiento;
+        this.entrenadorAsignado = entrenador;
+        if (servicios != null) this.listaServiciosAdicionales.addAll(servicios);
     }
 
     // Getters y Setters
@@ -48,12 +61,12 @@ public class Inscripcion {
         this.cliente = cliente;
     }
 
-    public Plan getPlan() {
-        return plan;
+    public PlanEntrenamiento getPlan() {
+        return planEntrenamiento;
     }
 
-    public void setPlan(Plan plan) {
-        this.plan = plan;
+    public void setPlan(PlanEntrenamiento planEntrenamiento) {
+        this.planEntrenamiento = planEntrenamiento;
     }
 
     public Entrenador getEntrenadorAsignado() {
@@ -88,6 +101,19 @@ public class Inscripcion {
         this.descuentoAplicado = descuentoAplicado;
     }
 
+    /** Calcula el costo del plan, sus servicios y sesiones, aplicando el descuento registrado.
+     * @return valor total de la inscripción
+     */
+    public double calcularValorTotal() {
+        if (planEntrenamiento == null) return 0;
+        double total = planEntrenamiento.calcularPrecioFinal();
+        for (ServicioAdicional servicio : listaServiciosAdicionales) total += servicio.getPrecio();
+        if (planEntrenamiento instanceof PlanPersonalizado personalizado && entrenadorAsignado != null) {
+            total += personalizado.getCantidadSesionesEntrenador() * entrenadorAsignado.getTarifaSesion();
+        }
+        return Math.max(0, total * (1 - descuentoAplicado / 100.0));
+    }
+
     /**
      * Metodo toString de la clase Inscripcion
      * @return
@@ -101,7 +127,7 @@ public class Inscripcion {
                 ", listaServiciosAdicionales=" + listaServiciosAdicionales +
                 ", cliente=" + cliente +
                 ", entrenadorAsignado=" + entrenadorAsignado +
-                ", plan=" + plan +
+                ", plan=" + planEntrenamiento +
                 '}';
     }
 }

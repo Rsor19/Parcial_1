@@ -8,14 +8,12 @@ public abstract class Persona {
     private String telefono;
     private String correo;
 
-    /**
-     * Metodo Constructor de la Clase Persona
-     * @param id
-     * @param nombre
-     * @param telefono
-     * @param correo
+    /** Crea una persona con su identificación y datos de contacto.
+     * @param id documento de identidad
+     * @param nombre nombre completo
+     * @param telefono número de teléfono
+     * @param correo correo electrónico
      */
-
     public Persona(String id, String nombre, String telefono, String correo) {
         this.id = id;
         this.nombre = nombre;

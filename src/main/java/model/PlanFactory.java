@@ -7,5 +7,5 @@ public abstract class PlanFactory {
      *
      * @return
      */
-    public abstract Plan crearPlan(String id);
+    public abstract PlanEntrenamiento crearPlan(String id);
 }

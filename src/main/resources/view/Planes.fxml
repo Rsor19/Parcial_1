@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlanesController">
+    <top><HBox spacing="8" alignment="CENTER_LEFT"><padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+        <Label text="Administración de planes"/><Button text="Inicio" onAction="#volver"/>
+    </HBox></top>
+    <center><TableView fx:id="planesTable" onMouseClicked="#cargarSeleccion">
+        <columns><TableColumn fx:id="codigoColumn" text="Código" prefWidth="90"/><TableColumn fx:id="nombreColumn" text="Nombre" prefWidth="140"/><TableColumn fx:id="tipoColumn" text="Tipo" prefWidth="105"/><TableColumn fx:id="duracionColumn" text="Meses" prefWidth="65"/><TableColumn fx:id="valorColumn" text="Valor mensual" prefWidth="110"/><TableColumn fx:id="totalColumn" text="Total planEntrenamiento" prefWidth="100"/><TableColumn fx:id="estadoColumn" text="Estado" prefWidth="100"/></columns>
+    </TableView></center>
+    <bottom><VBox spacing="8"><padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+        <HBox spacing="8"><TextField fx:id="codigoField" promptText="Código"/><TextField fx:id="nombreField" promptText="Nombre"/><ComboBox fx:id="tipoCombo" promptText="Tipo"/><TextField fx:id="duracionField" promptText="Duración (meses)"/><TextField fx:id="valorMensualField" promptText="Valor mensual"/><ComboBox fx:id="estadoCombo" promptText="Estado"/></HBox>
+        <HBox spacing="8"><TextArea fx:id="descripcionArea" promptText="Descripción" prefRowCount="2"/><TextField fx:id="beneficiosField" promptText="Beneficios separados por coma"/></HBox>
+        <HBox spacing="8"><TextField fx:id="sesionesField" promptText="Sesiones entrenador (personalizado)"/><ComboBox fx:id="especialidadCombo" promptText="Especialidad requerida"/><TextArea fx:id="objetivosArea" promptText="Objetivos del cliente" prefRowCount="1"/></HBox>
+        <HBox spacing="8"><Button text="Guardar / actualizar" onAction="#guardar"/><Button text="Eliminar" onAction="#eliminar"/><Button text="Limpiar" onAction="#limpiar"/></HBox>
+    </VBox></bottom>
+</BorderPane>

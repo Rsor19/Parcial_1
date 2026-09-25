@@ -1,5 +1,6 @@
 package model;
 
+
 public class ServicioAdicional {
     private String codigo;
     private String nombre;
@@ -8,14 +9,13 @@ public class ServicioAdicional {
     private boolean disponible;
     private TipoServicioAdicional tipoServicio;
 
-    /**
-     * Metodo constructor para la clase ServicioAdicional
-     * @param codigo
-     * @param nombre
-     * @param descripcion
-     * @param precio
-     * @param disponible
-     * @param tipoServicio
+    /** Crea un servicio adicional con su precio y disponibilidad inicial.
+     * @param codigo código único del servicio
+     * @param nombre nombre que verá el cliente
+     * @param descripcion detalle del servicio
+     * @param precio valor del servicio
+     * @param disponible indica si se puede ofrecer actualmente
+     * @param tipoServicio categoría del servicio
      */
     public ServicioAdicional(String codigo, String nombre, String descripcion, double precio, boolean disponible, TipoServicioAdicional tipoServicio) {
         this.codigo = codigo;
@@ -83,13 +83,6 @@ public class ServicioAdicional {
      */
     @Override
     public String toString() {
-        return "ServicioAdicional{" +
-                "codigo='" + codigo + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", precio=" + precio +
-                ", disponible=" + disponible +
-                ", tipoServicio=" + tipoServicio +
-                '}';
+        return nombre + " ($" + precio + ")";
     }
 }

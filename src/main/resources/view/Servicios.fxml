@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ServiciosController">
+  <top><HBox spacing="10"><padding><Insets top="10" right="10" bottom="10" left="10"/></padding><Label text="Servicios adicionales"/><Button text="Inicio" onAction="#volver"/></HBox></top>
+  <center><TableView fx:id="tabla" onMouseClicked="#cargar"><columns><TableColumn fx:id="codigoCol" text="Código"/><TableColumn fx:id="nombreCol" text="Nombre"/><TableColumn fx:id="descripcionCol" text="Descripción"/><TableColumn fx:id="tipoCol" text="Tipo"/><TableColumn fx:id="precioCol" text="Precio"/><TableColumn fx:id="disponibleCol" text="Disponible"/></columns></TableView></center>
+  <bottom><VBox spacing="8"><padding><Insets top="10" right="10" bottom="10" left="10"/></padding><HBox spacing="8"><TextField fx:id="codigoField" promptText="Código"/><TextField fx:id="nombreField" promptText="Nombre"/><ComboBox fx:id="tipoCombo" promptText="Tipo de servicio"/><TextField fx:id="precioField" promptText="Precio"/><CheckBox fx:id="disponibleCheck" text="Disponible"/></HBox><TextArea fx:id="descripcionArea" promptText="Descripción" prefRowCount="2"/><HBox spacing="8"><Button text="Guardar / actualizar" onAction="#guardar"/><Button text="Eliminar" onAction="#eliminar"/><Button text="Limpiar" onAction="#limpiar"/></HBox></VBox></bottom>
+</BorderPane>

@@ -1,6 +1,6 @@
 # Gestión de gimnasio
 
-Aplicación de escritorio JavaFX para gestionar planes de gimnasio. El proyecto usa Maven y sigue su estructura estándar.
+Aplicación de escritorio JavaFX para gestionar clientes, planes, entrenadores, servicios adicionales, inscripciones, consultas telefónicas e ingresos. El proyecto usa Maven y sigue su estructura estándar.
 
 ## Requisitos
 
@@ -36,3 +36,5 @@ mvn clean package
 ```
 
 Maven resuelve las dependencias JavaFX declaradas en `pom.xml`.
+
+Los registros se mantienen en memoria mientras la aplicación está abierta. Al cerrarla, los datos ingresados se pierden.

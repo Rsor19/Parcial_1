@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InscripcionesController">
+  <top><HBox spacing="10"><padding><Insets top="10" right="10" bottom="10" left="10"/></padding><Label text="Inscripciones"/><Button text="Inicio" onAction="#volver"/></HBox></top>
+  <center><TableView fx:id="tabla" onMouseClicked="#cargar"><columns><TableColumn fx:id="codigoCol" text="Código"/><TableColumn fx:id="fechaCol" text="Fecha"/><TableColumn fx:id="clienteCol" text="Cliente"/><TableColumn fx:id="planCol" text="Plan"/><TableColumn fx:id="totalCol" text="Total"/></columns></TableView></center>
+  <right><VBox spacing="8" prefWidth="270"><padding><Insets top="10" right="10" bottom="10" left="10"/></padding><Label text="Servicios incluidos"/><ListView fx:id="serviciosList" prefHeight="220"/></VBox></right>
+  <bottom><VBox spacing="8"><padding><Insets top="10" right="10" bottom="10" left="10"/></padding><HBox spacing="8"><TextField fx:id="codigoField" promptText="Código de inscripción"/><DatePicker fx:id="fechaPicker"/><ComboBox fx:id="clienteCombo" promptText="Cliente"/><ComboBox fx:id="planCombo" promptText="Plan"/></HBox><HBox spacing="8"><ComboBox fx:id="entrenadorCombo" promptText="Entrenador (personalizado)"/><TextField fx:id="descuentoField" promptText="Descuento % (opcional)"/><Button text="Guardar / actualizar" onAction="#guardar"/><Button text="Eliminar" onAction="#eliminar"/><Button text="Limpiar" onAction="#limpiar"/></HBox></VBox></bottom>
+</BorderPane>
