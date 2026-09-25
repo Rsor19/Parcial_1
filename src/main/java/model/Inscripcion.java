@@ -13,10 +13,10 @@ public class Inscripcion {
     private Entrenador entrenadorAsignado;
     private PlanEntrenamiento planEntrenamiento;
 
-    /** Crea una inscripción básica con código, fecha y descuento.
-     * @param codigoInscripcion código único de la inscripción
-     * @param fechaInscripcion fecha en que el cliente contrató el plan
-     * @param descuentoAplicado porcentaje de descuento aplicado
+    /** Crea una inscripción básica con código, fecha y descuento
+     * @param codigoInscripcion código de la Inscripción
+     * @param fechaInscripcion fecha de contratación del plan
+     * @param descuentoAplicado descuento
      */
     public Inscripcion(String codigoInscripcion, LocalDate fechaInscripcion, double descuentoAplicado) {
         this.codigoInscripcion = codigoInscripcion;

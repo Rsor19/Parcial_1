@@ -8,11 +8,11 @@ public abstract class Persona {
     private String telefono;
     private String correo;
 
-    /** Crea una persona con su identificación y datos de contacto.
-     * @param id documento de identidad
-     * @param nombre nombre completo
-     * @param telefono número de teléfono
-     * @param correo correo electrónico
+    /** Crea una persona con su identificación y datos de contacto
+     * @param id documento identidad
+     * @param nombre nombre
+     * @param telefono teléfono
+     * @param correo correo
      */
     public Persona(String id, String nombre, String telefono, String correo) {
         this.id = id;

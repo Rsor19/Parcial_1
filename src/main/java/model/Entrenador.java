@@ -6,13 +6,13 @@ public class Entrenador extends Persona {
     private EspecialidadEntrenador especialidad;
     private double tarifaSesion;
 
-    /** Crea un entrenador con su especialidad y tarifa por sesión.
-     * @param id identificación del entrenador
-     * @param nombre nombre completo
-     * @param telefono teléfono de contacto
-     * @param correo correo electrónico
-     * @param especialidad área en la que trabaja
-     * @param tarifaSesion valor que cobra por sesión
+    /** Crea un entrenador con su especialidad y tarifa
+     * @param id cedula
+     * @param nombre nombre
+     * @param telefono teléfono
+     * @param correo correo
+     * @param especialidad área de trabajo
+     * @param tarifaSesion valor por sesión
      */
     public Entrenador(String id, String nombre, String telefono, String correo, EspecialidadEntrenador especialidad, double tarifaSesion) {
         super(id, nombre, telefono, correo);
@@ -22,28 +22,29 @@ public class Entrenador extends Persona {
 
     //Getters y Setters
 
-
     public EspecialidadEntrenador getEspecialidad() {
         return especialidad;
     }
-
     public void setEspecialidad(EspecialidadEntrenador especialidad) {
+
         this.especialidad = especialidad;
     }
 
     public double getTarifaSesion() {
+
         return tarifaSesion;
     }
 
     public void setTarifaSesion(double tarifaSesion) {
-        this.tarifaSesion = tarifaSesion;
+
+        tarifaSesion = tarifaSesion;
     }
 
     /**
      * Metodo toString de la clase Entrenador
-     *
      * @return
      */
+
     @Override
     public String toString() {
         return getNombre() + " (" + getEspecialidad() + ")";
@@ -51,9 +52,9 @@ public class Entrenador extends Persona {
 
     /**
      * Sobreescritura del metodo validarIdentidad para la clase Entrenador
-     *
      * @return
      */
+
     @Override
     public String validarIdentidad(List<Persona> listaPersonas) {
         for (Persona e : listaPersonas) {
