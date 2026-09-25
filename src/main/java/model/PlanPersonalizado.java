@@ -19,6 +19,10 @@ public class PlanPersonalizado extends PlanEntrenamiento {
     public String getObjetivosCliente() { return objetivosCliente; }
     public void setObjetivosCliente(String objetivos) { this.objetivosCliente = objetivos; }
 
+    /**
+     * sobre escribe el metodo calcular para obtener el precio en base a la duraciond el entrenamiento
+     * @return
+     */
     @Override
     public double calcularPrecioFinal() {
         return getValorMensual() * getDuracionMeses();

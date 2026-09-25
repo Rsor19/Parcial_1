@@ -40,6 +40,10 @@ public abstract class PlanEntrenamiento {
         if (beneficios != null) this.beneficios.addAll(beneficios);
     }
 
+    /**
+     * metodo abstracto para calcular precio final de el plan que implemente
+     * @return
+     */
     public abstract double calcularPrecioFinal();
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }

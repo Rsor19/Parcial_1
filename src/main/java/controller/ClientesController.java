@@ -46,11 +46,19 @@ public class ClientesController {
         if (c == null) { aviso("Selecciona un cliente."); return; }
         AppContext.GIMNASIO.eliminarCliente(c.getId()); refrescar(); limpiar();
     }
+
+    /**
+     * Carga los datos de la tabla de clientes
+     */
     @FXML private void cargar() {
         Cliente c = tabla.getSelectionModel().getSelectedItem(); if (c == null) return;
         documentoField.setText(c.getId()); nombreField.setText(c.getNombre()); telefonoField.setText(c.getTelefono());
         correoField.setText(c.getCorreo()); edadField.setText(String.valueOf(c.getEdad())); fechaField.setValue(c.getFechaRegistro());
     }
+
+    /**
+     * Limpia el campo
+     */
     @FXML private void limpiar() {
         documentoField.clear(); nombreField.clear(); telefonoField.clear(); correoField.clear(); edadField.clear();
         fechaField.setValue(LocalDate.now()); tabla.getSelectionModel().clearSelection();
