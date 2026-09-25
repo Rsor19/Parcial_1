@@ -75,12 +75,31 @@ public class Cliente extends Persona {
      * @return
      */
     @Override
-    public String validarIdentidad(Persona cliente) {
-        for (Persona c : listaClientes) {
-            if (c.getId().equals(cliente.getId())) {
+    public String validarIdentidad(List<Persona> listaPersonas) {
+        for (Persona c : listaPersonas) {
+            if (c.getId().equals(this.getId())) {
                 return "Cliente registrado";
             }
         }
         return "Cliente no esta registrado";
+    }
+
+    /**
+     * Metodo para verificar si el numero de telefono del cliente es un numero perfecto o no
+     * @return
+     */
+    public boolean esNumeroPerfecto(long numero) {
+        if (numero <= 0) {
+            return false;
+        }
+
+        long suma = 0;
+        for (long i = 1; i < numero; i++) {
+            if (numero % i == 0) {
+                suma = suma + i;
+            }
+        }
+
+        return suma == numero;
     }
 }

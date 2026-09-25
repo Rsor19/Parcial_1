@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 public abstract class Persona {
     private String id;
     private String nombre;
@@ -73,5 +75,5 @@ public abstract class Persona {
      * Metodo para validar la identidad de una persona
      * @return
      */
-    public abstract String validarIdentidad();
+    public abstract String validarIdentidad(List<Persona> listaPersonas);
 }
