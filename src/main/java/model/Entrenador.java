@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 public class Entrenador extends Persona {
     private EspecialidadEntrenador especialidad;
     private double tarifaSesion;
@@ -58,9 +60,9 @@ public class Entrenador extends Persona {
      * @return
      */
     @Override
-    public String validarIdentidad(Persona entrenador) {
-        for (Persona e : listaEntrenadores) {
-            if (e.getId().equals(entrenador.getId())) {
+    public String validarIdentidad(List<Persona> listaPersonas) {
+        for (Persona e : listaPersonas) {
+            if (e.getId().equals(this.getId())) {
                 return "Entrenador registrado";
             }
         }
